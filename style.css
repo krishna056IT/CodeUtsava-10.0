@@ -351,40 +351,41 @@ nav ul li:hover {
 
     color: white;
 }
-
 .hero {
-
     position: relative;
-
     z-index: 2;
 
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     flex-direction: column;
 
     min-height: calc(100vh - 100px);
 
-    gap: 20px;
+    gap: 15px;
 
-    padding: 0 30px;
+    padding: 50px 20px;
 
     text-align: center;
 }
 
-.item3 {
 
+/* CodeUtsava + 10.0 container */
+
+.item3 {
     display: grid;
 
-    grid-template-columns: minmax(300px, 588px) 180px;
+    grid-template-columns: minmax(0, 1fr) auto;
 
     align-items: center;
 
+    gap: 20px;
+
+    width: min(100%, 900px);
+
     animation: heroEnter 1.2s ease forwards;
 }
+
 
 @keyframes heroEnter {
 
@@ -399,38 +400,43 @@ nav ul li:hover {
     }
 }
 
+
 .spn {
     color: var(--white);
 }
 
-.spn1 {
 
-    font-size: 40px;
+/* CODEUTSAVA */
+
+.spn1 {
+    font-size: clamp(28px, 3.5vw, 55px);
 
     font-family: "Bebas Neue", sans-serif;
 
     font-weight: 400;
 
-    letter-spacing: 4px;
+    letter-spacing: clamp(2px, 0.4vw, 4px);
 
     text-shadow:
         0 0 8px rgba(180, 220, 255, 0.5),
         0 0 20px rgba(100, 180, 255, 0.25);
 }
 
-.spn2 {
 
+/* 10.0 */
+
+.spn2 {
     font-family: "Bebas Neue", sans-serif;
 
-    font-size: clamp(100px, 11vw, 220px);
+    font-size: clamp(70px, 10vw, 180px);
 
     font-weight: 400;
 
-    letter-spacing: -5px;
+    letter-spacing: -3px;
 
     color: transparent;
 
-    -webkit-text-stroke: 3px #b9f3ff;
+    -webkit-text-stroke: clamp(1.5px, 0.25vw, 3px) #b9f3ff;
 
     text-shadow:
         0 0 4px #ffffff,
@@ -440,6 +446,7 @@ nav ul li:hover {
 
     animation: numberGlow 3s ease-in-out infinite alternate;
 }
+
 
 @keyframes numberGlow {
 
@@ -453,19 +460,53 @@ nav ul li:hover {
 }
 
 
-.spn3 {
+/* Tagline */
 
-    font-size: 42px;
+.spn3 {
+    font-size: clamp(24px, 3vw, 42px);
 
     font-family: "Saira", sans-serif;
 
     font-weight: 600;
 
-    letter-spacing: 2px;
+    letter-spacing: clamp(1px, 0.2vw, 2px);
 
     animation: fadeIn 1.5s ease forwards;
 }
+@media (max-width: 700px) {
 
+    .hero {
+        min-height: calc(100vh - 70px);
+
+        padding: 40px 15px;
+
+        gap: 15px;
+    }
+
+    .item3 {
+        grid-template-columns: 1fr;
+
+        gap: 5px;
+
+        width: 100%;
+    }
+
+    .spn1 {
+        font-size: clamp(30px, 9vw, 45px);
+    }
+
+    .spn2 {
+        font-size: clamp(75px, 22vw, 130px);
+
+        letter-spacing: -2px;
+    }
+
+    .spn3 {
+        font-size: clamp(22px, 6vw, 32px);
+
+        margin-top: 10px;
+    }
+}
 .spn4,
 .spn5 {
 
